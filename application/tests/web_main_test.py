@@ -77,15 +77,18 @@ class TestMain(unittest.TestCase):
                 )
             ),
             "cc": cres["cc"],
-            "cd": cres["cd"]
-            .add_link(
-                defs.Link(
-                    ltype=defs.LinkTypes.PartOf, document=cres["ca"].shallow_copy()
+            "cd": (
+                cres["cd"]
+                .add_link(
+                    defs.Link(
+                        ltype=defs.LinkTypes.PartOf, document=cres["ca"].shallow_copy()
+                    )
                 )
-            )
-            .add_link(
-                defs.Link(
-                    ltype=defs.LinkTypes.Contains, document=cres["cb"].shallow_copy()
+                .add_link(
+                    defs.Link(
+                        ltype=defs.LinkTypes.Contains,
+                        document=cres["cb"].shallow_copy(),
+                    )
                 )
             ),
         }
